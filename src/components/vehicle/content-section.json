@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_vehicle_content_sections",
+  "info": {
+    "displayName": "Content Section",
+    "icon": "car"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
