@@ -68,13 +68,22 @@
       "component": "vehicle.content-section",
       "repeatable": true
     },
-    "tags": {
-      "type": "text"
-    },
     "seo": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "blogs"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "blogs"
     }
   }
 }

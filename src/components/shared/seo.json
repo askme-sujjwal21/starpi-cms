@@ -16,11 +16,40 @@
       "type": "text",
       "required": true
     },
-    "shareImage": {
+    "keywords": {
+      "type": "text"
+    },
+    "OG_Title": {
+      "type": "string"
+    },
+    "OG_Description": {
+      "type": "text"
+    },
+    "OG_Image": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "twitter_title": {
+      "type": "string"
+    },
+    "twitter_description": {
+      "type": "text"
+    },
+    "twitter_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
