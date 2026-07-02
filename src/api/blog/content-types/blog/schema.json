@@ -60,9 +60,6 @@
       "component": "shared.slider",
       "repeatable": true
     },
-    "markdown_content": {
-      "type": "richtext"
-    },
     "sub_section": {
       "type": "component",
       "component": "vehicle.content-section",
@@ -84,6 +81,16 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "blogs"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "html_content": {
+      "type": "customField",
+      "customField": "plugin::tiptap-editor.RichText",
+      "options": {
+        "preset": "full"
+      }
     }
   }
 }

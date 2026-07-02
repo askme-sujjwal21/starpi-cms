@@ -592,6 +592,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
+    content: Schema.Attribute.Blocks;
     cover_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -606,11 +607,17 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       true
     >;
     featured_image_alt_text: Schema.Attribute.Text;
+    html_content: Schema.Attribute.Text &
+      Schema.Attribute.CustomField<
+        'plugin::tiptap-editor.RichText',
+        {
+          preset: 'full';
+        }
+      >;
     is_active: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
-    markdown_content: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', true>;
     slider: Schema.Attribute.Component<'shared.slider', true>;
