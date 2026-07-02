@@ -1,0 +1,88 @@
+/* Root wrapper */
+.quill-editor {
+  width: 100%;
+  display: block;
+}
+
+/* Quill root */
+.quill-editor .quill {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar */
+.quill-editor .ql-toolbar {
+  width: 100% !important;
+  border: 1px solid #dcdce4;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.quill-editor .ql-container {
+  width: 100% !important;
+  min-height: 350px;
+  border: 1px solid #dcdce4;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Editable area */
+.quill-editor .ql-editor {
+  min-height: 320px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Prevent clipping */
+.quill-editor * {
+  box-sizing: border-box;
+}
+
+/* Images */
+.quill-editor .ql-editor img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Videos */
+.quill-editor .ql-editor iframe {
+  max-width: 100%;
+}
+
+/* Lists */
+.quill-editor .ql-editor ul,
+.quill-editor .ql-editor ol {
+  padding-left: 1.5rem;
+}
+
+/* Paragraph spacing */
+.quill-editor .ql-editor p {
+  margin-bottom: 12px;
+}
+
+/* Focus */
+.quill-editor .ql-container.ql-snow:focus-within {
+  border-color: #4945ff;
+}
+
+/* Snow theme fix */
+.quill-editor .ql-snow {
+  border-color: #dcdce4;
+}
+
+/* Dark mode (Strapi) */
+.quill-editor .ql-editor {
+  background: transparent;
+  color: inherit;
+}
+
+.quill-editor .ql-toolbar button:hover {
+  color: inherit;
+}

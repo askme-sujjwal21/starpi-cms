@@ -83,14 +83,8 @@
       "mappedBy": "blogs"
     },
     "content": {
-      "type": "blocks"
-    },
-    "html_content": {
       "type": "customField",
-      "customField": "plugin::tiptap-editor.RichText",
-      "options": {
-        "preset": "full"
-      }
+      "customField": "plugin::react-quill-editor.react-quill"
     }
   }
 }

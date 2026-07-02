@@ -1,6 +1,12 @@
 import type { Core } from "@strapi/strapi";
 
-export default ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
+export default ({
+  env,
+}: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
+  "react-quill-editor": {
+    enabled: true,
+    resolve: "./src/plugins/react-quill-editor",
+  },
   upload: {
     config: {
       provider: "@strapi/provider-upload-aws-s3",
@@ -23,7 +29,7 @@ export default ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
       },
     },
   },
-    'tiptap-editor': {
+  "tiptap-editor": {
     config: {
       presets: {
         full: {
