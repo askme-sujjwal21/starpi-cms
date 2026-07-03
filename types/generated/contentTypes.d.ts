@@ -550,6 +550,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
@@ -557,34 +558,35 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     >;
     content: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<'plugin::react-quill-editor.react-quill'>;
-    cover_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    cover_image_alt_text: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
     featured_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    featured_image_alt_text: Schema.Attribute.Text;
-    is_active: Schema.Attribute.Boolean;
+    featured_weight: Schema.Attribute.Integer;
+    image_alt: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
+    page_metadata: Schema.Attribute.Text;
+    pre_roll_video: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', true>;
-    slider: Schema.Attribute.Component<'shared.slider', true>;
-    slug: Schema.Attribute.UID;
-    sub_section: Schema.Attribute.Component<'vehicle.content-section', true>;
+    slug: Schema.Attribute.UID<'title'>;
+    subtext: Schema.Attribute.Text;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    thumbnail_alt: Schema.Attribute.Text;
+    thumbnail_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video_url: Schema.Attribute.String;
   };
 }
 
@@ -597,7 +599,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     singularName: 'category';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog.blog'>;
@@ -616,7 +618,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    visible: Schema.Attribute.Boolean;
   };
 }
 

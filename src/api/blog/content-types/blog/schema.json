@@ -14,21 +14,19 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
-    "cover_image": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "content": {
+      "type": "customField",
+      "customField": "plugin::react-quill-editor.react-quill"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string"
     },
     "author": {
       "type": "relation",
@@ -36,8 +34,17 @@
       "target": "api::author.author",
       "inversedBy": "names"
     },
-    "is_active": {
-      "type": "boolean"
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "blogs"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "blogs"
     },
     "featured_image": {
       "type": "media",
@@ -49,42 +56,36 @@
         "audios"
       ]
     },
-    "featured_image_alt_text": {
+    "image_alt": {
       "type": "text"
     },
-    "cover_image_alt_text": {
+    "page_metadata": {
       "type": "text"
     },
-    "slider": {
-      "type": "component",
-      "component": "shared.slider",
-      "repeatable": true
+    "thumbnail_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "sub_section": {
-      "type": "component",
-      "component": "vehicle.content-section",
-      "repeatable": true
+    "thumbnail_alt": {
+      "type": "text"
     },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": true
+    "video_url": {
+      "type": "string"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
-      "mappedBy": "blogs"
+    "pre_roll_video": {
+      "type": "string"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "blogs"
+    "subtext": {
+      "type": "text"
     },
-    "content": {
-      "type": "customField",
-      "customField": "plugin::react-quill-editor.react-quill"
+    "featured_weight": {
+      "type": "integer"
     }
   }
 }
