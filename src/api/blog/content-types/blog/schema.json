@@ -22,9 +22,6 @@
       "type": "customField",
       "customField": "plugin::react-quill-editor.react-quill"
     },
-    "active": {
-      "type": "boolean"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",

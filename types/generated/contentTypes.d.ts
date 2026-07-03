@@ -550,7 +550,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    active: Schema.Attribute.Boolean;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
