@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
+  "workspaces": [
+    "src/plugins/*"
+  ],
   "scripts": {
-    "build": "strapi build",
+    "build": "npm run build:plugins && strapi build",
+    "build:plugins": "npm run build --workspaces",
+    "postinstall": "npm run build:plugins",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",

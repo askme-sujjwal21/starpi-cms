@@ -561,18 +561,15 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    featured_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    featured_weight: Schema.Attribute.Integer;
-    image_alt: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    media_alt: Schema.Attribute.Text;
     page_metadata: Schema.Attribute.Text;
     pre_roll_video: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'vehicle.content-section', true>;
     slug: Schema.Attribute.UID<'title'>;
     subtext: Schema.Attribute.Text;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
@@ -582,11 +579,11 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       true
     >;
     title: Schema.Attribute.String;
-    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     video_url: Schema.Attribute.String;
+    weight: Schema.Attribute.Integer;
   };
 }
 

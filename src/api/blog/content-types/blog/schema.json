@@ -25,9 +25,6 @@
     "active": {
       "type": "boolean"
     },
-    "type": {
-      "type": "string"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -46,9 +43,9 @@
       "target": "api::tag.tag",
       "mappedBy": "blogs"
     },
-    "featured_image": {
+    "media": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
@@ -56,7 +53,7 @@
         "audios"
       ]
     },
-    "image_alt": {
+    "media_alt": {
       "type": "text"
     },
     "page_metadata": {
@@ -84,8 +81,13 @@
     "subtext": {
       "type": "text"
     },
-    "featured_weight": {
+    "weight": {
       "type": "integer"
+    },
+    "sections": {
+      "type": "component",
+      "component": "vehicle.content-section",
+      "repeatable": true
     }
   }
 }

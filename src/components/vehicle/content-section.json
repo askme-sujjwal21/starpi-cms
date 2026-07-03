@@ -6,15 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "Heading": {
+    "heading": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "Media": {
+    "media": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
