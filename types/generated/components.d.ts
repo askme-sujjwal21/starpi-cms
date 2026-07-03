@@ -81,12 +81,9 @@ export interface VehicleContentSection extends Struct.ComponentSchema {
     icon: 'car';
   };
   attributes: {
-    Description: Schema.Attribute.Text;
-    Heading: Schema.Attribute.String;
-    Media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
